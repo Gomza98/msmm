@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MSMM Inc. | Maluleke Serithi Makume Matlala Attorneys</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Global Styles */
+    :root {
+      --primary: #1a365d;
+      --secondary: #9c8952;
+      --light: #f8f9fa;
+      --dark: #333333;
+      --white: #ffffff;
+      --gray: #f0f2f5;
+      --accent: #e6bc44;
+	  --red: #ff0000;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    
+    body {
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    a {
+      text-decoration: none;
+      color: var(--primary);
+      transition: all 0.3s ease;
+    }
+    
+    a:hover {
+      color: var(--secondary);
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 14px;
+    }
+    
+    .btn:hover {
+      background-color:#ff0000;
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-secondary {
+      background-color: #ff0000;
+    }
+    
+    .btn-secondary:hover {
+      background-color: var(--accent);
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    header.scrolled {
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo img {
+      width: 250px;
+      max-height: 150px;
+      margin-right: 10px;
+    }
+    
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .logo-text span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--secondary);
+      font-weight: 400;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style-type: none;
+      gap: 10px;
+    }
+    
+    nav ul li a {
+      color: var(--primary);
+      font-weight: 600;
+      padding: 8px 15px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    nav ul li a:hover {
+      color: var(--secondary);
+    }
+    
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background-color: var(--secondary);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    nav ul li a:hover::after {
+      width: 70%;
+    }
+    
+    .mobile-menu {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--primary);
+    }
+    
+    .nav-cta {
+      margin-left: 15px;
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('outside.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      position: relative;
+      margin-top: 80px;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+      z-index: 1;
+    }
+    
+    .hero-content {
+      max-width: 650px;
+      z-index: 2;
+      position: relative;
+      animation: fadeIn 1s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .hero-title {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: 22px;
+      margin-bottom: 30px;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    /* About Section */
+    .about {
+      padding: 100px 0;
+      background-color: var(--light);
+    }
+    
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: var(--primary);
+      position: relative;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 80px;
+      height: 3px;
+      background-color: var(--secondary);
+      transform: translateX(-50%);
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+      color: #666;
+      font-size: 18px;
+    }
+    
+    .about-content {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+    }
+    
+    .about-text {
+      flex: 1;
+    }
+    
+    .about-text p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    
+    .about-image {
+      flex: 1;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .about-image::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: var(--primary);
+      top: 15px;
+      left: 15px;
+      border-radius: 8px;
+      z-index: -1;
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    
+    .about-image:hover img {
+      transform: scale(1.03);
+    }
+    
+    /* Practice Areas */
+    .practice-areas {
+      padding: 100px 0;
+      background-color: var(--white);
+    }
+    
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .practice-card {
+      background-color: var(--light);
+      border-radius: 8px;
+      padding: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .practice-card::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: var(--secondary);
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    
+    .practice-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .practice-card:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    .practice-icon {
+      font-size: 40px;
+      color: var(--secondary);
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .practice-card:hover .practice-icon {
+      transform: scale(1.1);
+      color: var(--primary);
+    }
+    
+    .practice-title {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .practice-card p {
+      color: #666;
+      flex-grow: 1;
+    }
+    
+    .practice-card .btn {
+      margin-top: 15px;
+      padding: 8px 16px;
+      font-size: 14px;
+      align-self: flex-start;
+    }
+    
+    /* Team Section */
+    .team {
+      padding: 100px 0;
+      background-color: var(--light);
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .team-member {
+      background-color: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .member-image {
+      height: 320px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .team-member:hover .member-image img {
+      transform: scale(1.05);
+    }
+    
+    .member-social {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 0;
+      background-color: rgba(26, 54, 93, 0.9);
+      transition: bottom 0.3s ease;
+    }
+    
+    .team-member:hover .member-social {
+      bottom: 0;
+    }
+    
+    .member-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      transition: all 0.3s ease;
+    }
+    
+    .member-social a:hover {
+      background-color: var(--secondary);
+      color: var(--white);
+    }
+    
+    .member-info {
+      padding: 25px;
+      text-align: center;
+    }
+    
+    .member-name {
+      font-size: 22px;
+      color: var(--primary);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    
+    .member-position {
+      font-size: 16px;
+      color: var(--secondary);
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+    
+    .member-info p {
+      color: #666;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      padding: 100px 0;
+      background-color: var(--primary);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .testimonials::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('pattern.png') repeat;
+      opacity: 0.05;
+    }
+    
+    .testimonials .section-title {
+      color: var(--white);
+    }
+    
+    .testimonials .section-title::after {
+      background-color: var(--accent);
+    }
+    
+    .testimonial-slider {
+      margin-top: 50px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .testimonial {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 40px 30px;
+      border-radius: 8px;
+      position: relative;
+    }
+    
+    .testimonial-icon {
+      position: absolute;
+      top: -20px;
+      left: 30px;
+      width: 40px;
+      height: 40px;
+      background-color: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 20px;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 30px;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    
+    .client-info {
+      display: flex;
+      align-items: center;
+    }
+    
+    .client-image {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+      border: 3px solid var(--secondary);
+    }
+    
+    .client-name {
+      font-weight: 700;
+      font-size: 18px;
+    }
+    
+    .client-position {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    /* Contact Section */
+    .contact {
+      padding: 100px 0;
+      background-color: var(--white);
+    }
+    
+    .contact-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      margin-top: 50px;
+    }
+    
+    .contact-info {
+      margin-bottom: 30px;
+    }
+    
+    .contact-item {
+      display: flex;
+      margin-bottom: 25px;
+      align-items: flex-start;
+    }
+    
+    .contact-icon {
+      font-size: 24px;
+      color: var(--secondary);
+      margin-right: 15px;
+      min-width: 24px;
+      text-align: center;
+    }
+    
+    .contact-item h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: var(--primary);
+    }
+    
+    .contact-form {
+      background-color: var(--light);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    .contact-form h4 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: var(--primary);
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .contact-form h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--secondary);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+    
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+    
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      border-color: var(--secondary);
+      outline: none;
+    }
+    
+    .contact-form textarea {
+      height: 120px;
+      resize: vertical;
+    }
+    
+    .form-btn {
+      width: 100%;
+      text-align: center;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      padding: 60px 0 30px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+    
+    .footer-about p {
+      margin-bottom: 20px;
+      opacity: 0.8;
+      line-height: 1.7;
+    }
+    
+    .footer-links h4,
+    .footer-practice h4,
+    .footer-newsletter h4 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-links h4::after,
+    .footer-practice h4::after,
+    .footer-newsletter h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--secondary);
+    }
+    
+    .footer-links ul,
+    .footer-practice ul {
+      list-style: none;
+    }
+    
+    .footer-links li,
+    .footer-practice li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 15px;
+    }
+    
+    .footer-links li::before,
+    .footer-practice li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+    }
+    
+    .footer-links a,
+    .footer-practice a {
+      color: #ccc;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover,
+    .footer-practice a:hover {
+      color: var(--secondary);
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--secondary);
+      transform: translateY(-3px);
+    }
+    
+    .footer-newsletter input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+    }
+    
+    .footer-newsletter input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .footer-newsletter input:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0.7;
+      font-size: 14px;
+    }
+    
+    /* Consultation Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .modal.show {
+      display: block;
+      opacity: 1;
+    }
+    
+    .modal-content {
+      background-color: var(--white);
+      margin: 10% auto;
+      padding: 0;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      transform: translateY(-30px);
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .modal.show .modal-content {
+      transform: translateY(0);
+    }
+    
+    .modal-header {
+      padding: 20px 30px;
+      background-color: var(--primary);
+      color: var(--white);
+      position: relative;
+    }
+    
+    .modal-title {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    
+    .modal-subtitle {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    .close-modal {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 24px;
+      color: var(--white);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .close-modal:hover {
+      transform: rotate(90deg);
+      color: var(--secondary);
+    }
+    
+    .modal-body {
+      padding: 30px;
+    }
+    
+    .modal-footer {
+      padding: 20px 30px;
+      background-color: var(--light);
+      text-align: right;
+    }
+    
+    .modal-footer .btn {
+      margin-left: 10px;
+    }
+    
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+    
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background-color: var(--secondary);
+      transform: translateY(-3px);
+    }
+    
+    /* Animations */
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 1s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .about-image {
+        margin-top: 30px;
+      }
+      
+      .hero-title {
+        font-size: 40px;
+      }
+      
+      .hero-subtitle {
+        font-size: 20px;
+      }
+      
+      .section-title {
+        font-size: 32px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+      
+      .hero-title {
+        font-size: 32px;
+      }
+      
+      .hero-subtitle {
+        font-size: 18px;
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
+      
+      .member-image {
+        height: 280px;
+      }
+      
+      .modal-content {
+        margin: 15% auto;
+        width: 95%;
+      }
+    }
+    
+    /* Mobile Navigation */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background-color: var(--primary);
+      z-index: 2000;
+      transition: right 0.3s ease;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    
+    .mobile-nav.show {
+      right: 0;
+      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .mobile-nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .mobile-logo {
+      color: var(--white);
+      font-size: 24px;
+      font-weight: 700;
+    }
+    
+    .close-nav {
+      color: var(--white);
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    .mobile-nav ul {
+      list-style: none;
+    }
+    
+    .mobile-nav ul li {
+      margin-bottom: 15px;
+    }
+    
+    .mobile-nav ul li a {
+      color: var(--white);
+      font-size: 18px;
+      display: block;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1999;
+      display: none;
+    }
+    
+    .overlay.show {
+      display: block;
+    }
+    
+    /* Card Hover Effects */
+    .hover-zoom {
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-zoom:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <img src="logo.jpg" alt="MSMM Inc. Logo">
+        <div class="logo-text">
+        
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#practice-areas">Practice Areas</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <a href="#contact" class="btn btn-primary nav-cta">Book a Consultation</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Your Trusted Legal Partners</h1>
+        <p class="hero-subtitle">Driven by a passion for justice</p>
+        <div class="hero-buttons">
+          <a href="#about" class="btn btn-primary">Learn More</a>
+          <a href="#contact" class="btn btn-secondary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <p class="section-subtitle">Learn more about our firm and our commitment to providing excellent legal
+        services.</p>
+      <div class="about-content">
+        <div class="about-text">
+          <p>MSMM Inc. is a leading law firm dedicated to providing comprehensive legal solutions to our clients.
+            With a team of experienced attorneys, we are committed to delivering the highest quality of service and
+            achieving the best possible outcomes for our clients.</p>
+          <p>Our firm specializes in a wide range of practice areas, including corporate law, litigation, real estate,
+            and more. We pride ourselves on our client-focused approach and our ability to understand and address the
+            unique needs of each client.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+        <div class="about-image">
+          <img src="gauntlet.jpg" alt="Our Team">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Practice Areas Section -->
+  <section id="practice-areas" class="practice-areas">
+    <div class="container">
+      <h2 class="section-title">Our Practice Areas</h2>
+      <p class="section-subtitle">We offer a wide range of legal services to meet your needs.</p>
+      <div class="practice-grid">
+        <div class="practice-card">
+          <i class="fas fa-briefcase practice-icon"></i>
+          <h3 class="practice-title">Corporate & Commercial Law</h3>
+          <p>Business Rescue, Company Restructuring and turnaround | Liquidation and Insolvency | BBBEE Advisory Services | Tax Compliance Advice | Foreign Company Localisation and Compliance | Mergers, Acquisitions and Deal Structuring | Company Registrations | Forensic/Investigation Services and Debt Recovery | Corporate Governance | Project Management | Public/Private Partnerships | Public Sector Project Advice</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-balance-scale practice-icon"></i>
+          <h3 class="practice-title">Public/Constitutional Law</h3>
+          <p>Constitutional Matters(Interpretation - Litigation - Drafting/Amendments) | Legislation, Regulations, Ordinances and By-Laws(Interpretation - Negotiation skills - Drafting/Amendments) | Legal Advice and Representation | Corporate Governance Monitoring and Compliance | Land Reform and Restitution | Property Law and Property Management | Local Government Regulation and Legislation | Traditional Authority Advice | Situational Risk Analysis | Commissions of Inquiry</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-home practice-icon"></i>
+          <h3 class="practice-title">Administrative Law</h3>
+          <p>Business and Company Applications, Registrations and Licensing | Trust formation and registration | Trade Licence Applications | Applications for Citizenship and Permanent Residence | Advice on Security Legislation and Regulations | Registration of Ante Nuptial Marriage Contracts | Matrimonial Law | Immigration Legal Advice</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-hand-holding-usd practice-icon"></i>
+          <h3 class="practice-title">dispute Resolution</h3>
+          <p>Labour law, Arbitration and Mediation Services | Alternative Dispute Resolution | Labour Law Advice | Disciplinary Hearings and Commissions of Inquiry | Collective Bargaining and Negotiation Services | Situational Risk Analysis | Sports Contractual Negotiation and Advice.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-users practice-icon"></i>
+          <h3 class="practice-title">Third Party Claim</h3>
+          <p>Medical Negligence/Malpractice and Medical Insurance Claims | Road Accident Fund – Personal Injury Claims | Consumer Law and Consumer Protection | Insurance Law | Administration of Estates | Drafting of Wills | Winding Up and Administration of Deceased Estates | Curatorship and Registration of Executorships | Liquidations and Accounts Aistribution Management | Advice on Intestate Succession.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="practice-card">
+          <i class="fas fa-graduation-cap practice-icon"></i>
+          <h3 class="practice-title">Litigation</h3>
+          <p>When it comes to litigation, we are able to represent clients in litigation matters in all South African courts. These include the High Court, Magistrate’s Court, Labour Court, Tax Court, Constitutional Court, Land Claims Court and the Competition Commission Tribunal.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+		<div class="practice-card">
+          <i class="fas fa-users practice-icon"></i>
+          <h3 class="practice-title">Infrustructure Support</h3>
+          <p>MSMM offers facilities and infrastructure support for training, arbitration and disciplinary hearings at its premises. In addition, we let out rooms for executive training, arbitration and boardroom meetings.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="team">
+    <div class="container">
+      <h2 class="section-title">Meet Our Team</h2>
+      <p class="section-subtitle">Our team of experienced attorneys is dedicated to providing the best legal
+        services.</p>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-image">
+            <img src="nano.png" alt="Nano Matlala">
+            <div class="member-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Nano Matlala</h3>
+            <p class="member-position">CEO</p>
+            <p>Mr Matlala is an experienced attorney with a focus on corporate law and litigation.</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="member-image">
+            <img src="nkwinika.png" alt="Bekhen nkwinika">
+            <div class="member-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Bekhen nkwinika</h3>
+            <p class="member-position">Senior Director</p>
+            <p>Mr Nkwinika specializes in real estate law and has extensive experience in property transactions.</p>
+          </div>
+        </div>
+		<div class="team-member">
+          <div class="member-image">
+            <img src="tshepo.jpg" alt="Tshepo Matlala">
+            <div class="member-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Tshepo Matlala</h3>
+            <p class="member-position">Junior Director</p>
+            <p>Mr Matlala is an experienced attorney with a focus on corporate law and litigation.</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="member-image">
+            <img src="kamogelo.png" alt="Kamogelo nkwinika">
+            <div class="member-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3 class="member-name">Kamogelo Nkwinika</h3>
+            <p class="member-position">Junior Director</p>
+            <p>Kamogelo is passionate about family law and dedicated to helping families navigate legal challenges.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Clients Say</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial">
+          <div class="testimonial-icon"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text">"MSMM Inc. provided exceptional legal services and helped us achieve a favorable
+            outcome in our case. We highly recommend them!"</p>
+          <div class="client-info">
+            <div class="client-image">
+              <img src="client1.jpg" alt="Client 1">
+            </div>
+            <div>
+              <h4 class="client-name">Sarah Johnson</h4>
+              <p class="client-position">CEO, ABC Corp</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-icon"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text">"The team at MSMM Inc. is professional, knowledgeable, and truly cares about
+            their clients. They guided us through a complex legal process with ease."</p>
+          <div class="client-info">
+            <div class="client-image">
+              <img src="client2.jpg" alt="Client 2">
+            </div>
+            <div>
+              <h4 class="client-name">Michael Brown</h4>
+              <p class="client-position">Homeowner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">Get in touch with us to discuss your legal needs.</p>
+      <div class="contact-content">
+        <div class="contact-info">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.794641554063!2d28.2249819!3d-25.744303900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9558e5b8688a87%3A0xc676902f7c6151c8!2sMaluleke%20Seriti%20Makume%20Matlala%20Inc!5e0!3m2!1sen!2sza!4v1742300098997!5m2!1sen!2sza" width="450" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt contact-icon"></i>
+            <div>
+              <h4>Address</h4>
+              <p>905 Stanza Bopape St, Arcadia, Pretoria, 0007</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone contact-icon"></i>
+            <div>
+              <h4>Phone</h4>
+              <p>+27 87 232 1799</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope contact-icon"></i>
+            <div>
+              <h4>Email</h4>
+              <p>msmm@msmmminc.co.za</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h4>Send us a message</h4>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-btn">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <h3 class="footer-logo">MSMM Inc.</h3>
+          <p>MSMM Inc. is a leading law firm dedicated to providing comprehensive legal solutions to our clients.
+            With a team of experienced attorneys, we are committed to delivering the highest quality of service.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#practice-areas">Practice Areas</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-practice">
+          <h4>Practice Areas</h4>
+          <ul>
+            <li><a href="#practice-areas">Corporate & Commercial Law</a></li>
+            <li><a href="#practice-areas">Public/Constitutional Law</a></li>
+            <li><a href="#practice-areas">Administration Law</a></li>
+            <li><a href="#practice-areas">Dispute Resolution</a></li>
+            <li><a href="#practice-areas">Third Party Claim</a></li>
+			 <li><a href="#practice-areas">Litigation</a></li>
+			 <li><a href="#practice-areas">Infrustructure Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Subscribe to Our Newsletter</h4>
+          <p>Stay up-to-date with the latest legal news and insights.</p>
+          <form>
+            <input type="email" placeholder="Enter your email">
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 MSMM Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header Scroll Functionality
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Menu Functionality
+    document.querySelector('.mobile-menu').addEventListener('click', function () {
+      document.querySelector('nav ul').classList.toggle('show');
+    });
+
+    // Basic Form Validation (Enhance as needed)
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      let name = document.getElementById('name').value;
+      let email = document.getElementById('email').value;
+      let message = document.getElementById('message').value;
+
+      if (!name || !email || !message) {
+        alert('Please fill in all required fields.');
+        event.preventDefault(); // Prevent form submission
+      } else if (!isValidEmail(email)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+      } else {
+        alert('Form submitted successfully!'); // Replace with actual submission code
+        // Here you would typically use AJAX to submit the form data to a server
+      }
+    });
+
+    // Email validation helper function
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+  </script>
+
+</body>
+
+</html>
