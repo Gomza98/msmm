@@ -384,105 +384,277 @@
       align-self: flex-start;
     }
     
-    /* Team Section */
-    .team {
-      padding: 100px 0;
-      background-color: var(--light);
-    }
-    
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-    
-    .team-member {
-      background-color: var(--white);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-    }
-    
-    .team-member:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    }
-    
-    .member-image {
-      height: 320px;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .member-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    
-    .team-member:hover .member-image img {
-      transform: scale(1.05);
-    }
-    
-    .member-social {
-      position: absolute;
-      bottom: -50px;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      padding: 15px 0;
-      background-color: #9D441C;
-      transition: bottom 0.3s ease;
-    }
-    
-    .team-member:hover .member-social {
-      bottom: 0;
-    }
-    
-    .member-social a {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      transition: all 0.3s ease;
-    }
-    
-    .member-social a:hover {
-      background-color: #CA6A38;
-      color: var(--white);
-    }
-    
-    .member-info {
-      padding: 25px;
-      text-align: center;
-    }
-    
-    .member-name {
-      font-size: 22px;
-      color: var(--primary);
-      margin-bottom: 5px;
-      font-weight: 600;
-    }
-    
-    .member-position {
-      font-size: 16px;
-      color: var(--secondary);
-      margin-bottom: 15px;
-      font-weight: 500;
-    }
-    
-    .member-info p {
-      color: #666;
-    }
+   /* Team Section */
+.team {
+  padding: 100px 0;
+  background-color: var(--light);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.team-member {
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.member-image {
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-member:hover .member-image img {
+  transform: scale(1.05);
+}
+
+.member-social {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 0;
+  background-color: #9D441C;
+  transition: bottom 0.3s ease;
+}
+
+.team-member:hover .member-social {
+  bottom: 0;
+}
+
+.member-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.member-social a:hover {
+  background-color: #CA6A38;
+  color: var(--white);
+}
+
+.member-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.member-name {
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.member-position {
+  font-size: 16px;
+  color: var(--secondary);
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.member-info p {
+  color: #666;
+}
+
+/* View Profile Button */
+.view-profile-btn {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-profile-btn:hover {
+  background-color: #CA6A38;
+  transform: translateY(-2px);
+}
+
+/* Profile Modal Styles */
+.profile-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.profile-content {
+  background-color: white;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close-profile {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  color: #9D441C;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.close-profile:hover {
+  color: #CA6A38;
+  transform: rotate(90deg);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-title h2 {
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.profile-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.profile-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.profile-social a:hover {
+  background-color: #9D441C;
+  color: white;
+}
+
+.profile-body {
+  padding: 30px;
+}
+
+.profile-section {
+  margin-bottom: 25px;
+}
+
+.profile-section h3 {
+  font-size: 20px;
+  color: var(--primary);
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #eee;
+}
+
+.profile-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.profile-section li {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.profile-section p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.profile-section i {
+  margin-right: 10px;
+  color: var(--primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .profile-social {
+    justify-content: center;
+  }
+}
     
    
 	/* Our History Section */
@@ -1031,7 +1203,7 @@
       transform: scale(1.05);
     }
 	
-	/* Marquee Image Slider */
+/* Marquee Image Slider */
 .history-marquee {
   margin-top: 40px;
   overflow: hidden;
@@ -1052,13 +1224,13 @@
 .marquee {
   display: flex;
   gap: 20px;
-  animation: marquee-scroll 15s linear infinite;
+  animation: marquee-scroll 250s linear infinite; /* Slowed down from 30s to 100s */
   width: max-content;
 }
 
 .marquee img {
-  width: 200px;
-  height: 150px;
+  width: 450px;
+  height: 250px;
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -1078,6 +1250,7 @@
 .marquee-wrapper:hover .marquee {
   animation-play-state: paused;
 }
+
 
 /* Scroll to Top Button */
 #scrollTopBtn {
@@ -1228,76 +1401,300 @@
 </section>
 
 
-  <!-- Team Section -->
-  <section id="team" class="team">
-    <div class="container">
-      <h2 class="section-title">Meet Our Team</h2>
-      <p class="section-subtitle">Our team of experienced attorneys is dedicated to providing the best legal
-        services.</p>
-      <div class="team-grid">
-        <div class="team-member">
-          <div class="member-image">
-            <img src="nano.png" alt="Nano Matlala">
-            <div class="member-social">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-          <div class="member-info">
-            <h3 class="member-name">Nano Matlala</h3>
-            <p class="member-position">CEO - Senior Director</p>
-            <p>Mr Matlala is an experienced attorney with a focus on corporate law and litigation.</p>
+ <!-- Team Section -->
+<section id="team" class="team">
+  <div class="container">
+    <h2 class="section-title">Meet Our Team</h2>
+    <p class="section-subtitle">Our team of experienced attorneys is dedicated to providing the best legal services.</p>
+    <div class="team-grid">
+      <div class="team-member" onclick="openProfile('profile1')">
+        <div class="member-image">
+          <img src="nano.png" alt="Nano Matlala">
+          <div class="member-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-        <div class="team-member">
-          <div class="member-image">
-            <img src="nkwinika.png" alt="Bekhen nkwinika">
-            <div class="member-social">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-          <div class="member-info">
-            <h3 class="member-name">Bekhen nkwinika</h3>
-            <p class="member-position">Senior Director</p>
-            <p>Mr Nkwinika specializes in real estate law and has extensive experience in property transactions.</p>
+        <div class="member-info">
+          <h3 class="member-name">Nano Matlala</h3>
+          <p class="member-position">CEO - Senior Director</p>
+          <p>Mr Matlala is an experienced attorney with a focus on corporate law and litigation.</p>
+          <button class="view-profile-btn">View Full Profile</button>
+        </div>
+      </div>
+      <div class="team-member" onclick="openProfile('profile2')">
+        <div class="member-image">
+          <img src="nkwinika.png" alt="Bekhen nkwinika">
+          <div class="member-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-		<div class="team-member">
-          <div class="member-image">
-            <img src="tshepo.jpg" alt="Tshepo Matlala">
-            <div class="member-social">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-          <div class="member-info">
-            <h3 class="member-name">Tshepo Matlala</h3>
-            <p class="member-position">Director</p>
-            <p>Mr Matlala is an experienced attorney with a focus on corporate law and litigation.</p>
+        <div class="member-info">
+          <h3 class="member-name">Bekhen nkwinika</h3>
+          <p class="member-position">Senior Director</p>
+          <p>Mr Nkwinika specializes in real estate law and has extensive experience in property transactions.</p>
+          <button class="view-profile-btn">View Full Profile</button>
+        </div>
+      </div>
+      <div class="team-member" onclick="openProfile('profile3')">
+        <div class="member-image">
+          <img src="tshepo.jpg" alt="Tshepo Matlala">
+          <div class="member-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-        <div class="team-member">
-          <div class="member-image">
-            <img src="kamogelo.png" alt="Kamogelo nkwinika">
-            <div class="member-social">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+        <div class="member-info">
+          <h3 class="member-name">Tshepo Matlala</h3>
+          <p class="member-position">Director</p>
+          <p>Mr Matlala is an experienced attorney with a focus on corporate law and litigation.</p>
+          <button class="view-profile-btn">View Full Profile</button>
+        </div>
+      </div>
+      <div class="team-member" onclick="openProfile('profile4')">
+        <div class="member-image">
+          <img src="kamogelo.png" alt="Kamogelo nkwinika">
+          <div class="member-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
-          <div class="member-info">
-            <h3 class="member-name">Kamogelo Nkwinika</h3>
-            <p class="member-position">Director</p>
-            <p>Kamogelo is passionate about family law and dedicated to helping families navigate legal challenges.</p>
-          </div>
+        </div>
+        <div class="member-info">
+          <h3 class="member-name">Kamogelo Nkwinika</h3>
+          <p class="member-position">Director</p>
+          <p>Kamogelo is passionate about family law and dedicated to helping families navigate legal challenges.</p>
+          <button class="view-profile-btn">View Full Profile</button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Profile Modal Overlays -->
+<div id="profile1" class="profile-modal">
+  <div class="profile-content">
+    <span class="close-profile" onclick="closeProfile('profile1')">&times;</span>
+    <div class="profile-header">
+      <div class="profile-image">
+        <img src="nano.png" alt="Nano Matlala">
+      </div>
+      <div class="profile-title">
+        <h2>Nano Matlala</h2>
+        <p class="member-position">CEO - Senior Director</p>
+        <div class="profile-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="profile-body">
+      <div class="profile-section">
+        <h3>About</h3>
+        <p>Mr Matlala is an experienced attorney with over 42 years of practice focusing on corporate law and litigation. He founded the firm after the previous regimes and after serving as a partner at one of South Africa's leading law firms.</p>
+      </div>
+      <div class="profile-section">
+        <h3>Education</h3>
+        <ul>
+          <li>LLB, University of Pretoria, 2005</li>
+          <li>LLM in Commercial Law, University of Cape Town, 2007</li>
+          <li>Admitted as Attorney of the High Court of South Africa, 2008</li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <h3>Areas of Expertise</h3>
+        <ul>
+          <li>Corporate Law</li>
+          <li>Commercial Litigation</li>
+          <li>Mergers & Acquisitions</li>
+          <li>Banking & Finance Law</li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <h3>Notable Cases</h3>
+        <p>Led the legal team in the landmark case of Corporation X v. Financial Regulatory Authority (2018), which established new precedent for corporate compliance requirements.</p>
+        <p>Successfully negotiated the merger between two major financial institutions in 2020, valued at over R2.5 billion.</p>
+      </div>
+      <div class="profile-section">
+        <h3>Contact Information</h3>
+        <p><i class="fas fa-phone"></i> (082) 922 3280</p>
+        <p><i class="fas fa-envelope"></i>matlala@msmminc.co.za</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="profile2" class="profile-modal">
+  <div class="profile-content">
+    <span class="close-profile" onclick="closeProfile('profile2')">&times;</span>
+    <div class="profile-header">
+      <div class="profile-image">
+        <img src="nkwinika.png" alt="Bekhen nkwinika">
+      </div>
+      <div class="profile-title">
+        <h2>Bekhen nkwinika</h2>
+        <p class="member-position">Senior Director</p>
+        <div class="profile-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="profile-body">
+      <div class="profile-section">
+        <h3>About</h3>
+        <p>Mr Nkwinika has specialized in real estate law for over 12 years and has handled thousands of property transactions across South Africa. He joined the firm in 2012 and has established the real estate division as one of the most respected in the industry.</p>
+      </div>
+      <div class="profile-section">
+        <h3>Education</h3>
+        <ul>
+          <li>LLB, University of the Witwatersrand, 2008</li>
+          <li>Postgraduate Diploma in Property Law, University of Johannesburg, 2010</li>
+          <li>Admitted as Attorney of the High Court of South Africa, 2009</li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <h3>Areas of Expertise</h3>
+        <ul>
+          <li>Property Law</li>
+          <li>Real Estate Transactions</li>
+          <li>Property Development</li>
+          <li>Land Claims</li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <h3>Notable Achievements</h3>
+        <p>Managed legal aspects of the development of a major mixed-use property development in Sandton valued at R1.8 billion.</p>
+        <p>Successfully represented clients in over 50 land claim cases, with a success rate of 90%.</p>
+      </div>
+      <div class="profile-section">
+        <h3>Contact Information</h3>
+        <p><i class="fas fa-phone"></i> (084) 579 0072</p>
+        <p><i class="fas fa-envelope"></i> nkwinika@msmminc.co.za</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="profile3" class="profile-modal">
+  <div class="profile-content">
+    <span class="close-profile" onclick="closeProfile('profile3')">&times;</span>
+    <div class="profile-header">
+      <div class="profile-image">
+        <img src="tshepo.jpg" alt="Tshepo Matlala">
+      </div>
+      <div class="profile-title">
+        <h2>Tshepo Matlala</h2>
+        <p class="member-position">Director</p>
+        <div class="profile-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="profile-body">
+      <div class="profile-section">
+        <h3>About</h3>
+        <p>Mr Matlala focuses on corporate law and complex litigation cases. With a background in both private practice and as in-house counsel for a major corporation, he brings a unique perspective to client matters. He joined the firm in 2015.</p>
+      </div>
+      <div class="profile-section">
+        <h3>Education</h3>
+        <ul>
+          <li>LLB, University of Limpopo, 2010</li>
+          <li>MBA, GIBS Business School, 2015</li>
+          <li>Admitted as Attorney of the High Court of South Africa, 2011</li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <h3>Areas of Expertise</h3>
+        <ul>
+          <li>Corporate Law</li>
+          <li>Complex Litigation</li>
+          <li>Contract Law</li>
+          <li>Business Restructuring</li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <h3>Professional Memberships</h3>
+        <ul>
+          <li>Law Society of South Africa</li>
+          <li>Association of Corporate Counsel</li>
+          <li>International Bar Association</li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <h3>Contact Information</h3>
+        <p><i class="fas fa-phone"></i> (067) 278 3746</p>
+        <p><i class="fas fa-envelope"></i> tmatlala@msmminc.co.za</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="profile4" class="profile-modal">
+  <div class="profile-content">
+    <span class="close-profile" onclick="closeProfile('profile4')">&times;</span>
+    <div class="profile-header">
+      <div class="profile-image">
+        <img src="kamogelo.png" alt="Kamogelo nkwinika">
+      </div>
+      <div class="profile-title">
+        <h2>Kamogelo Nkwinika</h2>
+        <p class="member-position">Director</p>
+        <div class="profile-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="profile-body">
+      <div class="profile-section">
+        <h3>About</h3>
+        <p>Kamogelo is dedicated to family law and helping families navigate complex legal challenges. She has a compassionate approach that has earned her a reputation as one of the most sought-after family law attorneys in the region.</p>
+      </div>
+      <div class="profile-section">
+        <h3>Education</h3>
+        <ul>
+          <li>LLB, University of the Western Cape, 2012</li>
+          <li>Postgraduate Certificate in Family Mediation, University of Pretoria, 2014</li>
+          <li>Admitted as Attorney of the High Court of South Africa, 2013</li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <h3>Areas of Expertise</h3>
+        <ul>
+          <li>Family Law</li>
+          <li>Divorce Proceedings</li>
+          <li>Child Custody</li>
+          <li>Domestic Violence Protection</li>
+          <li>Family Mediation</li>
+        </ul>
+      </div>
+      <div class="profile-section">
+        <h3>Community Involvement</h3>
+        <p>Kamogelo volunteers monthly at the Family Law Clinic, providing free legal advice to underprivileged communities. She also conducts workshops on family law issues at community centers.</p>
+      </div>
+      <div class="profile-section">
+        <h3>Contact Information</h3>
+        <p><i class="fas fa-phone"></i> (078) 233 8518</p>
+        <p><i class="fas fa-envelope"></i> kamogelo@msmminc.co.za</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Our History Section -->
 <section id="our-history" class="our-history">
@@ -1316,21 +1713,21 @@ After the Apartheid regime had unbanned the country’s liberation movements, th
     <div class="history-marquee">
       <div class="marquee-wrapper">
         <div class="marquee">
-          <img src="history1.jpg" alt="Historic Event 1">
-          <img src="history2.jpg" alt="Historic Event 2">
-          <img src="history3.jpg" alt="Historic Event 3">
-          <img src="history4.jpg" alt="Historic Event 4">
-          <img src="history5.jpg" alt="Historic Event 5">
-		    <img src="history1.jpg" alt="Historic Event 1">
-          <img src="history2.jpg" alt="Historic Event 2">
-          <img src="history3.jpg" alt="Historic Event 3">
-          <img src="history4.jpg" alt="Historic Event 4">
-          <img src="history5.jpg" alt="Historic Event 5">
-		    <img src="history1.jpg" alt="Historic Event 1">
-          <img src="history2.jpg" alt="Historic Event 2">
-          <img src="history3.jpg" alt="Historic Event 3">
-          <img src="history4.jpg" alt="Historic Event 4">
-          <img src="history5.jpg" alt="Historic Event 5">
+          <img src="1.jpg" alt="Historic Event 1">
+          <img src="2.jpg" alt="Historic Event 2">
+          <img src="3.jpg" alt="Historic Event 3">
+          <img src="4.jpg" alt="Historic Event 4">
+          <img src="5.jpg" alt="Historic Event 5">
+		  <img src="6.jpg" alt="Historic Event 1">
+          <img src="7.jpg" alt="Historic Event 2">
+          <img src="3.jpg" alt="Historic Event 3">
+          <img src="4.jpg" alt="Historic Event 4">
+          <img src="5.jpg" alt="Historic Event 5">
+		  <img src="1.jpg" alt="Historic Event 1">
+          <img src="2.jpg" alt="Historic Event 2">
+          <img src="3.jpg" alt="Historic Event 3">
+          <img src="4.jpg" alt="Historic Event 4">
+          <img src="5.jpg" alt="Historic Event 5">
         </div>
       </div>
     </div>
@@ -1500,6 +1897,26 @@ window.onscroll = function () {
 // Smooth scroll to top
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+function openProfile(profileId) {
+  document.getElementById(profileId).style.display = "flex";
+  document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+}
+
+function closeProfile(profileId) {
+  document.getElementById(profileId).style.display = "none";
+  document.body.style.overflow = "auto"; // Enable scrolling again
+}
+
+// Close the modal if user clicks outside of the modal content
+window.onclick = function(event) {
+  var modals = document.getElementsByClassName("profile-modal");
+  for (var i = 0; i < modals.length; i++) {
+    if (event.target == modals[i]) {
+      modals[i].style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  }
 }
 
   </script>
