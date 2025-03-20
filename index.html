@@ -1283,6 +1283,42 @@
 }
 
 
+
+/* Hide navigation menu by default on mobile */
+nav ul {
+    display: none;
+    flex-direction: column; /* Stack items vertically */
+    background-color: var(--white); /* Optional */
+    position: absolute; /* Positioning for mobile */
+    top: 100%; /* Below header */
+    right: 0;
+    width: 100%; /* Full width */
+}
+
+/* Show navigation menu when 'active' class is applied */
+nav ul.active {
+    display: flex; /* Show menu when active */
+}
+
+/* Ensure mobile menu icon is visible */
+.mobile-menu {
+    display: block;
+}
+
+/* Hide mobile menu icon on larger screens */
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+
+    nav ul {
+        display: flex; /* Default desktop layout */
+        flex-direction: row;
+        position: static; /* Reset positioning */
+        width: auto;
+    }
+}
+
   </style>
 </head>
 <body>
@@ -1303,10 +1339,11 @@
           <li><a href="#our-history">Our History</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
-      <div class="mobile-menu">
+		<div class="mobile-menu">
         <i class="fas fa-bars"></i>
       </div>
+      </nav>
+      
       <a href="#contact" class="btn btn-primary nav-cta">Book a Consultation</a>
     </div>
   </header>
@@ -1316,7 +1353,7 @@
     <div class="container">
       <div class="hero-content">
         <h1 class="hero-title">Your Trusted Legal Partners</h1>
-        <p class="hero-subtitle"><>Driven by a passion for justice</p>
+        <p class="hero-subtitle"><i>Driven by a passion for justice</i></p>
         <div class="hero-buttons">
           <a href="#about" class="btn btn-primary">Learn More</a>
           <a href="#contact" class="btn btn-secondary">Contact Us</a>
@@ -1420,7 +1457,7 @@
           <h3 class="member-name">Nano Matlala</h3>
           <p class="member-position">CEO - Senior Director</p>
           <p>Mr Nano Matlala is a distinguished South African attorney with over four decades of expertise in constitutional law, corporate restructuring, and complex litigation.</p>
-          <button class="view-profile-btn">View Full Profile</button>
+          <button class="view-profile-btn">View Profile</button>
         </div>
       </div>
       <div class="team-member" onclick="openProfile('profile2')">
@@ -1436,7 +1473,7 @@
           <h3 class="member-name">Bekhen nkwinika</h3>
           <p class="member-position">Senior Director</p>
           <p>Mr Nkwinika is a dedicated attorney with expertise in litigation, estate administration, and property law, committed to justice and integrity.</p>
-          <button class="view-profile-btn">View Full Profile</button>
+          <button class="view-profile-btn">View Profile</button>
         </div>
       </div>
       <div class="team-member" onclick="openProfile('profile3')">
@@ -1451,8 +1488,8 @@
         <div class="member-info">
           <h3 class="member-name">Tshepo Matlala</h3>
           <p class="member-position">Director</p>
-          <p>Mr Matlala is an experienced attorney with a focus on corporate law and litigation.</p>
-          <button class="view-profile-btn">View Full Profile</button>
+          <p>Tshepo Matlala is an attorney with a diverse legal background, specializing in commercial law, land claims, constitutional law, and various other fields.</p>
+          <button class="view-profile-btn">View Profile</button>
         </div>
       </div>
       <div class="team-member" onclick="openProfile('profile4')">
@@ -1468,7 +1505,7 @@
           <h3 class="member-name">Kamogelo Nkwinika</h3>
           <p class="member-position">Director</p>
           <p>Kamogelo is a skilled attorney with a strong background in estate administration, family law, and personal injury claims. </p>
-          <button class="view-profile-btn">View Full Profile</button>
+          <button class="view-profile-btn">View Profile</button>
         </div>
       </div>
     </div>
@@ -1496,8 +1533,42 @@
     </div>
     <div class="profile-body">
       <div class="profile-section">
-        <h3>About</h3>
+		 <h3>About</h3>
         <p>Mr Nano Matlala is a highly experienced attorney with over four decades of legal practice. He played a key role in South Africa’s legal landscape both pre- and post-democracy, representing liberation movements, civic organizations, and trade unions in political trials. His leadership helped shape legal institutions and policies, and he was instrumental in major law firm mergers and training future judges.</p>
+		
+	  
+        <h3>leadership roles Current and Present</h3>
+        <ul>
+  <li>Evidence Leader at the JB Shongwe Commission of Enquiry into Taxi Violence: Head of Evidence at the JB Shongwe Commission into Taxi Violence (October 2019 – December 2020).</li>
+  <li>Appointed by the Minister of Intelligence: to represent all Intelligence Structures during the Hefer Commission.</li>
+  <li>Appointed by the Minister of Intelligence: as a Panel Member of a Disciplinary Enquiry against a CFO of the Intelligence Academy in Mafikeng.</li>
+  <li>Appointed by the Minister of Intelligence: in the establishment of Comsec.</li>
+  <li>Advised the Ministry on various Intelligence matters.</li>
+  <li>Appointed by the Minister of State Security: to represent her during the Zondo Commission.</li>
+  <li>President: Black Lawyers Association, Transvaal Law Society, and the Law Society of the Northern Provinces.</li>
+  <li>Chairperson of the Association for the Advancement of Black Insolvency Practitioners.</li>
+  <li>Former Chairperson: Transnet Group Tender Board.</li>
+  <li>Former Chairperson: Transnet Housing Tender Board.</li>
+  <li>Co-Chair of the Law Society of South Africa.</li>
+  <li>Chairperson of the Takeover Regulation Panel and the Securities Regulation Panel.</li>
+  <li>Appointed by the Harmful Business Practices Committee to serve as a member of the Unfair Contract Terms Committee (1997-1999).</li>
+  <li>Appointed by the Minister of Trade Industry to serve as a member of the Harmful Business Practices Committee (1997-1999).</li>
+  <li>Appointed by the Minister of Justice to serve as a member of the Insolvency Committee drafting a unified Insolvency Act for South Africa. The Insolvency Committee is a subcommittee of the South African Law Commission.</li>
+  <li>Former Chairperson: Association for the Advancement of Black Insolvency Practitioners.</li>
+  <li>Director of NOSA: 1995-1997.</li>
+  <li>Ex-officio Board Member of the South African Chapter of the African Renaissance.</li>
+  <li>Ex-member of the Audit Committee of Bonitas Medical Scheme (2001-2004).</li>
+  <li>Ex-member of the Competition Committee of the Law Society of the Law Society of the Northern Provinces.</li>
+  <li>Ex-Council member of the Association of Insolvency Practitioners of South Africa.</li>
+  <li>Appointed Chairperson of the Advisory Committee of Material Irregularities by the Auditor General of South Africa in terms of Section 5(2) of the Public Audit Act, 2004.</li>
+  <li>Director of United Royals and Kingdoms South Africa Holdings.</li>
+  <li>Council Member of the Central University Of Technology Council.</li>
+  <li>Senior Examiner and Moderator of the Attorneys Admission Examination.</li>
+  <li>Chair of the Tax Board.</li>
+  <li>Previous Member of the Magistrates Commission and Tax Court.</li>
+  <li>Previous Member of the Takeover Regulation Panel.</li>
+</ul>
+
 		</div>
       <div class="profile-section">
         <h3>Education</h3>
@@ -1551,7 +1622,7 @@
 	   </div>
       <div class="profile-section">
         <h3>Contact Information</h3>
-        <p><i class="fas fa-phone"></i> (082) 922 3280</p>
+        
         <p><i class="fas fa-envelope"></i>matlala@msmminc.co.za</p>
       </div>
     </div>
@@ -1610,7 +1681,7 @@
 	  </div>
       <div class="profile-section">
         <h3>Contact Information</h3>
-        <p><i class="fas fa-phone"></i> (084) 579 0072</p>
+        
         <p><i class="fas fa-envelope"></i> nkwinika@msmminc.co.za</p>
       </div>
     </div>
@@ -1636,41 +1707,50 @@
       </div>
     </div>
     <div class="profile-body">
-      <div class="profile-section">
-        <h3>About</h3>
-        <p>Mr Matlala focuses on corporate law and complex litigation cases. With a background in both private practice and as in-house counsel for a major corporation, he brings a unique perspective to client matters. He joined the firm in 2015.</p>
-      </div>
-      <div class="profile-section">
-        <h3>Education</h3>
-        <ul>
-          <li>LLB, University of Limpopo, 2010</li>
-          <li>MBA, GIBS Business School, 2015</li>
-          <li>Admitted as Attorney of the High Court of South Africa, 2011</li>
-        </ul>
-      </div>
-      <div class="profile-section">
-        <h3>Areas of Expertise</h3>
-        <ul>
-          <li>Corporate Law</li>
-          <li>Complex Litigation</li>
-          <li>Contract Law</li>
-          <li>Business Restructuring</li>
-        </ul>
-      </div>
-      <div class="profile-section">
-        <h3>Professional Memberships</h3>
-        <ul>
-          <li>Law Society of South Africa</li>
-          <li>Association of Corporate Counsel</li>
-          <li>International Bar Association</li>
-        </ul>
-      </div>
-      <div class="profile-section">
-        <h3>Contact Information</h3>
-        <p><i class="fas fa-phone"></i> (067) 278 3746</p>
-        <p><i class="fas fa-envelope"></i> tmatlala@msmminc.co.za</p>
-      </div>
-    </div>
+     <div class="profile-section">
+  <h3>About</h3>
+<p>Tshepo holds a Bachelor of Law degree from the University of South Africa (2020) and a BTech in Journalism from Tshwane University of Technology (2009), where he also earned a Diploma in Journalism (2000). He began his career as a journalist, working for Mafube Publishing and contributing to Enterprise and Sawubona Magazines. Tshepo completed his Articles of Clerkship at MSMM INC from 2011 to 2014 while pursuing his LLB. Admitted as an attorney in 2021, he also completed the Advanced Trial Advocacy Programme in 2020. His legal experience spans land reform, personal injury claims, commercial law, labour law, and other areas.</p>
+</div>
+<div class="profile-section">
+  <h3>Education</h3>
+  <ul>
+    <li>Bachelor of Law (LLB), University of South Africa, 2020</li>
+    <li>Diploma in Journalism, Tshwane University of Technology, 2000</li>
+    <li>BTech in Journalism, Tshwane University of Technology, 2009</li>
+    <li>Advanced Trial Advocacy Programme, Black Lawyers Association Legal Education Center, 2020</li>
+    <li>Admitted as Attorney of the High Court of South Africa, 2021</li>
+  </ul>
+</div>
+<div class="profile-section">
+  <h3>Areas of Expertise</h3>
+  <ul>
+    <li>Rental Law</li>
+    <li>Commercial and Corporate Law</li>
+    <li>Land Claims</li>
+    <li>Road Accident Fund Claims</li>
+    <li>Insolvency</li>
+    <li>Customary and Civil Marriages</li>
+    <li>Customary Law</li>
+    <li>Property Law</li>
+    <li>Labour Law</li>
+    <li>Administration of Deceased Estate</li>
+    <li>Constitutional Law</li>
+    <li>Registration of Trusts</li>
+    <li>Sports Law</li>
+  </ul>
+</div>
+<div class="profile-section">
+  <h3>Professional Memberships</h3>
+  <ul>
+    <li>Law Society of South Africa</li>
+    <li>Black Lawyers Association</li>
+  </ul>
+</div>
+<div class="profile-section">
+  <h3>Contact Information</h3>
+  <p><i class="fas fa-envelope"></i> tmatlala@msmminc.co.za</p>
+</div>
+</div>
   </div>
 </div>
 
@@ -1721,7 +1801,7 @@
       </div>
       <div class="profile-section">
         <h3>Contact Information</h3>
-        <p><i class="fas fa-phone"></i> (078) 233 8518</p>
+       
         <p><i class="fas fa-envelope"></i> kamogelo@msmminc.co.za</p>
       </div>
     </div>
@@ -1951,6 +2031,19 @@ window.onclick = function(event) {
     }
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Select the mobile menu icon and navigation menu
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navMenu = document.querySelector('nav ul');
+
+    // Add a click event listener to the mobile menu icon
+    mobileMenu.addEventListener('click', () => {
+        // Toggle the 'active' class on the navigation menu
+        navMenu.classList.toggle('active');
+    });
+});
+	
 
   </script>
 
