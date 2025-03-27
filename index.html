@@ -1311,11 +1311,7 @@
 		
       </nav>
       <div class="mobile-menu" >
-	      <li><a href="#about">About</a></li>
-          <li><a href="#practice-areas">Practice Areas</a></li>
-          <li><a href="#team">Our Team</a></li>
-          <li><a href="#our-history">Our History</a></li>
-          <li><a href="#contact">Contact</a></li></i>
+	    
         <i class="fas fa-bars">
       </div>
       <a href="#contact" class="btn btn-primary nav-cta">Book a Consultation</a>
@@ -1932,7 +1928,7 @@ After the Apartheid regime had unbanned the country’s liberation movements, th
   </footer>
 
   <script>
-   $("mobile-menu").hide(); 
+    
    // Header Scroll Functionality
     window.addEventListener('scroll', function () {
       const header = document.querySelector('header');
@@ -1943,10 +1939,15 @@ After the Apartheid regime had unbanned the country’s liberation movements, th
       }
     });
 
-    // Mobile Menu Functionality
-    document.querySelector('.mobile-menu').addEventListener('click', function () {
-      document.querySelector('nav ul').classList.toggle('show');
-    });
+  // Mobile Menu Functionality
+document.querySelector('.mobile-menu').addEventListener('click', function () {
+    // Toggle the 'show' class on the nav menu
+    document.querySelector('nav ul').classList.toggle('show');
+    
+    // Optional: If you're trying to hide the mobile menu button after clicking
+    $(".mobile-menu").hide(); // This hides the mobile menu button
+});
+
 
     // Basic Form Validation (Enhance as needed)
     document.getElementById('contactForm').addEventListener('submit', function (event) {
