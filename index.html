@@ -1282,26 +1282,42 @@
   display: flex;
 }
 
-/* Initially hide the menu */
+
+
+/* Hide navigation menu by default on mobile */
 nav ul {
     display: none;
+    flex-direction: column; /* Stack items vertically */
+    background-color: var(--white); /* Optional */
+    position: absolute; /* Positioning for mobile */
+    top: 100%; /* Below header */
+    right: 0;
+    width: 100%; /* Full width */
 }
 
-nav ul.show {
+/* Show navigation menu when 'active' class is applied */
+nav ul.active {
+    display: flex; /* Show menu when active */
+}
+
+/* Ensure mobile menu icon is visible */
+.mobile-menu {
     display: block;
 }
 
-/* Style the mobile menu icon */
-.mobile-menu {
-    cursor: pointer;
-    font-size: 30px; /* Adjust the size of the icon */
-    color: white;
-}
+/* Hide mobile menu icon on larger screens */
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
 
-.mobile-menu i {
-    font-size: 30px; /* Adjust the icon size */
+    nav ul {
+        display: flex; /* Default desktop layout */
+        flex-direction: row;
+        position: static; /* Reset positioning */
+        width: auto;
+    }
 }
-
 
   </style>
 </head>
@@ -1323,13 +1339,11 @@ nav ul.show {
           <li><a href="#our-history">Our History</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-		
-      </nav>
-      <div class="mobile-menu" >
-	    
-        <i class="fas fa-bars">
+		<div class="mobile-menu">
+        <i class="fas fa-bars"></i>
       </div>
-	<div>
+      </nav>
+      
       <a href="#contact" class="btn btn-primary nav-cta">Book a Consultation</a>
     </div>
   </header>
@@ -1944,8 +1958,7 @@ After the Apartheid regime had unbanned the country’s liberation movements, th
   </footer>
 
   <script>
-    
-   // Header Scroll Functionality
+    // Header Scroll Functionality
     window.addEventListener('scroll', function () {
       const header = document.querySelector('header');
       if (window.scrollY > 50) {
@@ -1955,15 +1968,10 @@ After the Apartheid regime had unbanned the country’s liberation movements, th
       }
     });
 
-  // Mobile Menu Functionality
-document.querySelector('.mobile-menu').addEventListener('click', function () {
-    // Toggle the 'show' class on the nav menu
-    document.querySelector('nav ul').classList.toggle('show');
-    
-    // Optional: If you're trying to hide the mobile menu button after clicking
-    $(".mobile-menu").hide(); // This hides the mobile menu button
-});
-
+    // Mobile Menu Functionality
+    document.querySelector('.mobile-menu').addEventListener('click', function () {
+      document.querySelector('nav ul').classList.toggle('show');
+    });
 
     // Basic Form Validation (Enhance as needed)
     document.getElementById('contactForm').addEventListener('submit', function (event) {
