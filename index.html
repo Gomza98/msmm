@@ -1310,7 +1310,7 @@
         </ul>
 		
       </nav>
-      <div class="mobile-menu">
+      <div class="mobile-menu" >
         <i class="fas fa-bars"><li><a href="#about">About</a></li>
           <li><a href="#practice-areas">Practice Areas</a></li>
           <li><a href="#team">Our Team</a></li>
@@ -1931,7 +1931,8 @@ After the Apartheid regime had unbanned the country’s liberation movements, th
   </footer>
 
   <script>
-    // Header Scroll Functionality
+   $(".mobile-menu").hide(); 
+   // Header Scroll Functionality
     window.addEventListener('scroll', function () {
       const header = document.querySelector('header');
       if (window.scrollY > 50) {
