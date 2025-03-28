@@ -160,44 +160,49 @@
       width: 70%;
     }
     
- .mobile-menu {
-  display: none; /* Hidden on desktop */
-  cursor: pointer;
+ /* Mobile Menu Styles */
+.mobile-menu {
+    display: none; /* Hidden by default on desktop */
+    cursor: pointer;
 }
 
+/* Responsive breakpoint */
 @media (max-width: 768px) {
-  .mobile-menu {
-    display: block; /* Visible on mobile */
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100;
-  }
+    .mobile-menu {
+        display: block; /* Show on mobile */
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+    }
 
-  nav ul {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
+    nav ul {
+        display: none; /* Hide menu by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-  nav ul.active {
-    display: flex; /* Visible when active */
-  }
+    nav ul.active {
+        display: flex; /* Show when active class is added */
+    }
 
-  nav ul li {
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-  }
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
 }
-
+    
+    .nav-cta {
+      margin-left: 15px;
+    }
     
     /* Hero Section */
     .hero {
@@ -1242,27 +1247,31 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
- <header>
-  <div class="header-container">
-    <div class="logo">
-      <img src="logo.png" alt="Logo">
-      <span class="logo-text">MSMM Inc.</span>
+ <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <img src="msmm.jpg" alt="MSMM Inc. Logo">
+        <div class="logo-text">
+        
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#practice-areas">Practice Areas</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#our-history">Our History</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+		
+      </nav>
+      	<div class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <a href="#contact" class="btn btn-primary nav-cta">Request a Consultation</a>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <!-- Mobile Menu Toggle -->
-    <div class="mobile-menu">
-      <i class="fas fa-bars"></i>
-    </div>
-  </div>
-</header>
+  </header>
 
 
   <!-- Hero Section -->
@@ -1944,23 +1953,17 @@ window.onclick = function(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const navMenu = document.querySelector('nav ul');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navMenu = document.querySelector('nav ul');
 
-  // Toggle menu visibility on click
-  mobileMenu.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    
-    // Change icon between bars and close
-    const icon = mobileMenu.querySelector('i');
-    if (icon.classList.contains('fa-bars')) {
-      icon.classList.remove('fa-bars');
-      icon.classList.add('fa-times');
+    if (mobileMenu && navMenu) {
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('is-active'); // Optional: add visual feedback to menu icon
+        });
     } else {
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-bars');
+        console.error('Mobile menu or navigation menu not found');
     }
-  });
 });
 
 
