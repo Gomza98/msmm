@@ -1968,11 +1968,6 @@ After the Apartheid regime had unbanned the country’s liberation movements, th
       }
     });
 
-    // Mobile Menu Functionality
-    document.querySelector('.mobile-menu').addEventListener('click', function () {
-      document.querySelector('nav ul').classList.toggle('show');
-    });
-
     // Basic Form Validation (Enhance as needed)
     document.getElementById('contactForm').addEventListener('submit', function (event) {
       let name = document.getElementById('name').value;
@@ -2032,15 +2027,17 @@ window.onclick = function(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Select the mobile menu icon and navigation menu
     const mobileMenu = document.querySelector('.mobile-menu');
     const navMenu = document.querySelector('nav ul');
 
-    // Add a click event listener to the mobile menu icon
-    mobileMenu.addEventListener('click', () => {
-        // Toggle the 'active' class on the navigation menu
-        navMenu.classList.toggle('active');
-    });
+    if (mobileMenu && navMenu) {
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('is-active'); // Optional: add visual feedback to menu icon
+        });
+    } else {
+        console.error('Mobile menu or navigation menu not found');
+    }
 });
 	
 
