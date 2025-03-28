@@ -160,12 +160,45 @@
       width: 70%;
     }
     
+  /* Mobile Menu Styles */
+.mobile-menu {
+    display: none; /* Hidden by default on desktop */
+    cursor: pointer;
+}
+
+/* Responsive breakpoint */
+@media (max-width: 768px) {
     .mobile-menu {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-      color: var(--primary);
+        display: block; /* Show on mobile */
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
     }
+
+    nav ul {
+        display: none; /* Hide menu by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav ul.active {
+        display: flex; /* Show when active class is added */
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
+}
     
     .nav-cta {
       margin-left: 15px;
@@ -1097,10 +1130,6 @@
         display: none;
       }
       
-      .mobile-menu {
-        display: block;
-      }
-      
       .hero-title {
         font-size: 32px;
       }
@@ -1123,76 +1152,6 @@
       }
     }
     
-    /* Mobile Navigation */
-    .mobile-nav {
-      position: fixed;
-      top: 0;
-      right: -300px;
-      width: 300px;
-      height: 100vh;
-      background-color: var(--primary);
-      z-index: 2000;
-      transition: right 0.3s ease;
-      overflow-y: auto;
-      padding: 20px;
-    }
-    
-    .mobile-nav.show {
-      right: 0;
-      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    .mobile-nav-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .mobile-logo {
-      color: var(--white);
-      font-size: 24px;
-      font-weight: 700;
-    }
-    
-    .close-nav {
-      color: var(--white);
-      font-size: 24px;
-      cursor: pointer;
-    }
-    
-    .mobile-nav ul {
-      list-style: none;
-    }
-    
-    .mobile-nav ul li {
-      margin-bottom: 15px;
-    }
-    
-    .mobile-nav ul li a {
-      color: var(--white);
-      font-size: 18px;
-      display: block;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 1999;
-      display: none;
-    }
-    
-    .overlay.show {
-      display: block;
-    }
     
     /* Card Hover Effects */
     .hover-zoom {
@@ -1284,40 +1243,6 @@
 
 
 
-/* Hide navigation menu by default on mobile */
-nav ul {
-    display: none;
-    flex-direction: column; /* Stack items vertically */
-    background-color: var(--white); /* Optional */
-    position: absolute; /* Positioning for mobile */
-    top: 100%; /* Below header */
-    right: 0;
-    width: 100%; /* Full width */
-}
-
-/* Show navigation menu when 'active' class is applied */
-nav ul.active {
-    display: flex; /* Show menu when active */
-}
-
-/* Ensure mobile menu icon is visible */
-.mobile-menu {
-    display: block;
-}
-
-/* Hide mobile menu icon on larger screens */
-@media (min-width: 768px) {
-    .mobile-menu {
-        display: none;
-    }
-
-    nav ul {
-        display: flex; /* Default desktop layout */
-        flex-direction: row;
-        position: static; /* Reset positioning */
-        width: auto;
-    }
-}
 
   </style>
 </head>
@@ -1344,7 +1269,7 @@ nav ul.active {
       	<div class="mobile-menu">
         <i class="fas fa-bars"></i>
       </div>
-      <a href="#contact" class="btn btn-primary nav-cta">Book a Consultation</a>
+      <a href="#contact" class="btn btn-primary nav-cta">Request a Consultation</a>
     </div>
   </header>
 
